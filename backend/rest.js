@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const DiaryEntryModel = require('./entry-schema');
 const { default: mongoose } = require('mongoose');
-
+const { default: mongoose1 } = require('mongoose');
 const UserModel = require('./user-model')
 const bcrypt = require('bcrypt');
 const userModel = require('./user-model');
@@ -15,11 +15,22 @@ const jwt = require('jsonwebtoken');
 
 mongoose.connect('mongodb+srv://idk:idk@elevate.k86vszw.mongodb.net/?appName=Elevate')
 .then(() => {
-    console.log('connected to omngodb');
+    console.log('connected to users database');
 })
 .catch(() => {
-    console.log('error for mongodb');
+    console.log('error for users database');
 })
+
+// mongoose1.connect('mongodb+srv://aa:aa@resumes.24zhoub.mongodb.net/?retryWrites=true&w=majority&appName=resumes')
+// .then(() => {
+//     console.log('connected to resumes database');
+// })
+// .catch(() => {
+//     console.log('error for resumes database');
+// })
+
+
+
 
 
 app.use(cors());
